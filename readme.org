@@ -1,0 +1,20 @@
+* Notes
+  - The rc.lua file is a complete mess, but it works.  I'll clean it
+    up when I have time.
+* Caveats
+  - It works for me on Ubuntu 10.04 with the available awesome
+    packages. It may not work for you. :)
+* Requirements
+  - The file ~/tmp/gmail and ~/tmp/email must exist for the email
+    check to work.
+  - You must create a file called
+    ~/.config/awesome/scripts/mypasswords.py and put the following in
+    it:
+      global email_password
+      global gmail_password
+
+      email_password="<your email password>"
+      gmail_password="<your gmail password>"
+  - Change the email server host and port appropriately in
+    ~/.config/awesome/scripts/unread-email.py
+
