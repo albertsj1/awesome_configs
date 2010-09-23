@@ -91,13 +91,13 @@ myemail.text = "<b><small> email </small></b>"
 
 mailtimer = timer({ timeout = 180 })
 mailtimer:add_signal("timeout", function()
-  os.execute("~/.config/awesome/scripts/unread-email.py > ~/tmp/email &")
-  os.execute("~/.config/awesome/scripts/unread-gmail.py > ~/tmp/gmail &")
+  os.execute("~/.config/awesome/scripts/unread-email.py > " .. os.getenv("HOME") .. "/tmp/email &")
+  os.execute("~/.config/awesome/scripts/unread-gmail.py > " .. os.getenv("HOME") .. "/tmp/gmail &")
 end)
 maildisplaytimer = timer({ timeout = 30 })
 maildisplaytimer:add_signal("timeout", function()
 
-  local g = io.open("~/tmp/gmail") 
+  local g = io.open(os.getenv("HOME") .. "/tmp/gmail") 
   local l = nil
   if g ~= nil then
     l = g:read() -- read output of command
@@ -108,7 +108,7 @@ maildisplaytimer:add_signal("timeout", function()
 
   mygmail.text = l
 
-  local e = io.open("~/tmp/email") 
+  local e = io.open(os.getenv("HOME") .. "/tmp/email") 
   local l = nil
   if e ~= nil then
     l = e:read() -- read output of command
