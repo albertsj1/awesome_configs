@@ -17,4 +17,5 @@
       gmail_password="<your gmail password>"
   - Change the email server host and port appropriately in
     ~/.config/awesome/scripts/unread-email.py
+  - Sakura, an excellent lightweight terminal.  apt-get install sakura
 
